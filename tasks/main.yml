@@ -38,7 +38,7 @@
   tags: ['skip_ansible_lint']
 
 - include_tasks: install.yml
-  when: "solr_version.split('.')[0] >= '5'"
+  when: solr_version.split('.')[0]|int >= 5
 
 - name: Ensure solr is started and enabled on boot if configured.
   service:
@@ -49,7 +49,7 @@
 
 # Configure solr.
 - include_tasks: configure.yml
-  when: "solr_version.split('.')[0] >= '5'"
+  when: solr_version.split('.')[0]|int >= 5
 
 # Create cores, if any are configured.
 - include_tasks: cores.yml
