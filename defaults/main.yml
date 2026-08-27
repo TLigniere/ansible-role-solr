@@ -20,7 +20,7 @@ solr_connect_host: localhost
 solr_port: "8983"
 solr_jetty_host: "127.0.0.1"
 solr_modules: ""
-solr_ip_allowlist: "0.0.0.0/0"
+solr_ip_allowlist: ""
 
 
 solr_xms: "256M"
